@@ -42,6 +42,9 @@ Operation: string operationStr = Console.ReadLine();
         case 3:
             Console.WriteLine("Delete method is working");
             break;
+        case 4:
+            Console.WriteLine("Delete method is working");
+            break;
         default:
             Console.WriteLine("Operation notfound");
             goto Operation;
