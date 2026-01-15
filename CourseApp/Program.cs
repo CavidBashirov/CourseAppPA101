@@ -1,8 +1,7 @@
-﻿
-
-using CourseApp.Controllers;
+﻿using CourseApp.Controllers;
 using Repository.Repositories;
 using Repository.Repositories.Interfaces;
+using Service.Helpers.Enums;
 using Service.Services;
 using Service.Services.Interfaces;
 
@@ -33,14 +32,14 @@ Operation: string operationStr = Console.ReadLine();
 
     switch (operation)
     {
-        case 1:
+        case (int)Operations.CreateEducation:
             eduController.ExecuteCreate();
             break;
-        case 2:
+        case (int)Operations.GetAllEducations:
             eduController.ExecuteGetAll();
             break;
-        case 3:
-            Console.WriteLine("Delete method is working");
+        case (int)Operations.DeleteEducation:
+            eduController.ExecuteDelete();
             break;
         case 4:
             Console.WriteLine("Delete method is working");

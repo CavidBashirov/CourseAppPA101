@@ -6,8 +6,10 @@ namespace Repository.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
+        private static int _idCounter = 1;
         public void Create(T entity)
         {
+            entity.Id = _idCounter++;
             AppDbContext<T>.datas.Add(entity);
         }
         public void Delete(T entity)

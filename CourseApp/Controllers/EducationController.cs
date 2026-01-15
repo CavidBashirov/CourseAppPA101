@@ -56,5 +56,35 @@ namespace CourseApp.Controllers
                 Console.WriteLine(education);
             }
         }
+
+        public void ExecuteDelete()
+        {
+            Console.WriteLine("Add education id:");
+        Id: string idStr = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(idStr))
+            {
+                Console.WriteLine("Input can't be empty:");
+                goto Id; ;
+            }
+
+            try
+            {
+                bool isCorrectId = int.TryParse(idStr, out int id);
+                if (isCorrectId)
+                {
+                    _educationService.Delete(id);
+                }
+                else
+                {
+                    Console.WriteLine("Input format is wrong");
+                    goto Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                goto Id;
+            }
+        }
     }
 }
